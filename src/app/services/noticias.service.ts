@@ -12,4 +12,8 @@ export class NoticiasService {
   getTopHeadlines() {
     return this.http.get<RespuestaTopHeadlines>(`https://newsapi.org/v2/top-headlines?country=us&apiKey=c8dc81aa05c145b89d63123af110a184`);
   }
+
+  getTopHeadlinesCategoria(categoria: string) {
+    return this.http.get(`https://newsapi.org/v2/top-headlines?country=us&category=${categoria}&apiKey=c8dc81aa05c145b89d63123af110a184`);
+  }
 }
