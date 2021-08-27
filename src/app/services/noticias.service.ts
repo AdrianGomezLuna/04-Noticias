@@ -7,10 +7,14 @@ import { RespuestaTopHeadlines } from '../pages/interfaces/interfaces';
 })
 export class NoticiasService {
 
+  headlines = 0;
+
   constructor(private http: HttpClient) { }
 
   getTopHeadlines() {
-    return this.http.get<RespuestaTopHeadlines>(`https://newsapi.org/v2/top-headlines?country=us&apiKey=c8dc81aa05c145b89d63123af110a184`);
+    this.headlines++;
+    // eslint-disable-next-line max-len
+    return this.http.get<RespuestaTopHeadlines>(`https://newsapi.org/v2/top-headlines?country=us&apiKey=c8dc81aa05c145b89d63123af110a184&page=${ this.headlines }`);
   }
 
   getTopHeadlinesCategoria(categoria: string) {
