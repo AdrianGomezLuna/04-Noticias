@@ -11,3 +11,6 @@ Abrimos el terminal y nos dirigimos a la ruta donde queramos el proyecto y escri
 Para su <b>reconstrucción</b>
 
 <strong>npm install @ionic/angular@latest --save </strong>
+
+Puede que de algún error en el Core, si es así:
+<strong>npm i @ionic-native/core</strong>
